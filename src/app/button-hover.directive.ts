@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class ButtonHoverDirective {
 
   constructor(
-    private el: ElementRef
+    private el: ElementRef<any>
   ) { }
 
   @HostListener('mouseover') onMouseEnter() {

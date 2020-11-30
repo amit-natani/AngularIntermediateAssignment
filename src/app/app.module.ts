@@ -8,7 +8,7 @@ import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.com
 import { ProductComponent } from './product/product.component';
 import { ButtonHoverDirective } from './button-hover.directive';
 import { AddProductComponent } from './add-product/add-product.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

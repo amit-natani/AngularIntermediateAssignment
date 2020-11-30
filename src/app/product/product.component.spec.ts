@@ -8,9 +8,9 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductComponent ]
+      declarations: [ProductComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,17 @@ describe('ProductComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should have shippingDetails as false`, () => {
+    const fixture1 = TestBed.createComponent(ProductComponent);
+    const product = fixture1.componentInstance;
+    expect(product.shippingDetails).toEqual(false);
+  });
+
+  it(`should have addProductForm as false`, () => {
+    const fixture1 = TestBed.createComponent(ProductComponent);
+    const product = fixture1.componentInstance;
+    expect(product.addProductForm).toEqual(false);
   });
 });
