@@ -1,0 +1,45 @@
+<div class="container-fluid" *ngIf="!addProductForm">
+  <div class="feedHeader pt-3">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="block-widget">
+          <div>
+            <p>
+              <label>Title: </label>
+              <span>
+                TimeSheet
+              </span>
+            </p>
+            <p>
+              <label>Price: </label>
+              <span>
+                $2.4
+              </span>
+            </p>
+          </div>
+          <div>
+            <label>Image: </label>
+            <img
+              src="https://lh3.googleusercontent.com/proxy/Q5EsjbOT6tEEIVy8UUg-B4HoXR-560dTs_TQDrfnVrPSiratAIrBbKQYFawkUvK2t7jSaXHYLSBfAEMG-8HFd_WPo4cOr35BGE6cQTve5zOkXHThlT27--2WkRTnvHP8bUyz_cIDa8iuQ7voF13lExWZ1fr35NUtlkM1"
+              alt="Product" width="100" height="100">
+          </div>
+          <div>
+          </div>
+          <div>
+            <button appButtonHover style="background-color: lightgray;" (click)="shippingDetails = !shippingDetails">
+              {{shippingDetails ? "Hide Shipping Details" : "Show Shipping Details"}}
+            </button>
+          </div>
+          <div id="shippingDetails" *ngIf="shippingDetails">
+            This is shipping details
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="addProductForm = true">Add new product</button>
+</div>
+
+<div *ngIf="addProductForm">
+  <app-add-product (cancelAddEmitter)="addProductForm = false"></app-add-product>
+</div>

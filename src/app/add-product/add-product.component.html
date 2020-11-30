@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h3>Add Product</h3>
+  <form [formGroup]="productForm" #ngForm="ngForm" (ngSubmit)="createProduct(productForm)">
+    <div class="row">
+      <div class="col-2">
+        <label>Title</label>
+      </div>
+      <div class="col-10">
+        <input type="text" formControlName="title">
+      </div>
+      <div class="col-2">
+
+      </div>
+      <div class="col-10 error" *ngIf="(ngForm.submitted || title.touched) && title.errors && title.errors.required">
+        Title is required
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <label>Price</label>
+      </div>
+      <div class="col-10">
+        <input type="number" formControlName="price">
+      </div>
+      <div class="col-2">
+
+      </div>
+      <div class="col-10 error" *ngIf="(ngForm.submitted || price.touched) && price.errors && price.errors.required">
+        Price is required
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button type="submit">Save</button>
+        <button (click)="cancelAdd()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
